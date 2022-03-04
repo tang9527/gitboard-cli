@@ -1,14 +1,23 @@
 {
   "name": "gitboard-cli",
-  "version": "0.3.2",
-  "description": "gitboard cli",
+  "version": "0.3.3",
+  "description": "view contributions of developers",
   "main": "index.ts",
+  "keywords": [
+    "gitboard",
+    "gb",
+    "git",
+    "logs",
+    "parse git logs",
+    "contribution",
+    "developer",
+    "console"
+  ],
   "scripts": {
     "start": "ts-node  ./src/index.ts",
     "build": "./node_modules/.bin/webpack",
     "test": "jest  --colors --coverage"
   },
-  "keywords": [],
   "author": "jimtang",
   "license": "MIT",
   "repository": {
