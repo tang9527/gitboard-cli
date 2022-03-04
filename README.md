@@ -1,7 +1,7 @@
 > View contributions of developers under the console
 
 <p align="center">
-  <img width="600" src="https://cdn.rawgit.com/marionebl/svg-term-cli/1250f9c1/examples/parrot.svg">
+  <img width="600" src="https://cdn.jsdelivr.net/npm/gitboard-cli@0.3.1/examples/gb.svg">
 </p>
 
 # gitboard-cli
