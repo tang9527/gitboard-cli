@@ -1,13 +1,14 @@
 {
   "name": "gitboard-cli",
-  "version": "0.3.3",
-  "description": "view contributions of developers",
+  "version": "0.3.4",
+  "description": "View contributions of developers in the git repository",
   "main": "index.ts",
   "keywords": [
     "gitboard",
     "gb",
     "git",
     "logs",
+    "repository",
     "parse git logs",
     "contribution",
     "developer",

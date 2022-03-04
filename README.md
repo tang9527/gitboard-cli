@@ -1,4 +1,4 @@
-> View contributions of developers under the console
+> View contributions of developers in the git repository
 
 <p align="center">
   <img width="600" src="https://cdn.jsdelivr.net/npm/gitboard-cli@0.3.1/examples/gb.svg">
