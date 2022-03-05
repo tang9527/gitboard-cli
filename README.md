@@ -10,6 +10,8 @@
 
 ## Install
 
+**IMPORTANT:** [Node.js](https://nodejs.org/) version should be above 16.0.0
+
 It is recommended to install Gitboard-cli through the [npm package manager](http://npmjs.org/), which comes bundled with [Node.js](https://nodejs.org/) when you install it on your system.
 
 Once you have npm installed you can run the following both to install and upgrade Gitboard-cli:
