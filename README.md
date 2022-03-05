@@ -17,18 +17,38 @@ It is recommended to install Gitboard-cli through the [npm package manager](http
 Once you have npm installed you can run the following both to install and upgrade Gitboard-cli:
 
 ```sh
-npm install -g gitboard-cli
+npm install --global gitboard-cli
 ```
 
 ## Usage
 
-```
+> In the directory where the Git repository is located, execute the following commands👇
+
+```sh
 gb rank
+```
+
+or
+
+```sh
+gb status
+```
+
+or
+
+```sh
+gb rank --top 20 --after=2022-1-1 --before=2022-2-1
+```
+
+or
+
+```sh
+gb status --after=2022-1-1 --before=2022-2-1
 ```
 
 ## Interface
 
-```
+```sh
 λ gb --help
 
   Usage: gb [options] [command]
