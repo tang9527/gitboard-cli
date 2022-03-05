@@ -26,7 +26,7 @@
     "url": "https://github.com/tang9527/gitboard-cli.git"
   },
   "dependencies": {
-    "gitboard-cli-blessed": "^0.1.84",
+    "gitboard-cli-blessed": "^0.1.85",
     "gitboard-cli-blessed-contrib": "^4.11.1",
     "colors-cli": "^1.0.28",
     "commander": "^9.0.0",
