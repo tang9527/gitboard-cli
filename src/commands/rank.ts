@@ -34,7 +34,7 @@ async function handler(_: string, cmd: { [key: string]: any }) {
     columnWidth: [10, 30, 15, 20, 15, 20, 15, 20],
   });
   const calculatePercent = (current: number, total: number): string => {
-    return `${(current / total).toFixed(3)}%`;
+    return `${((current * 100) / total).toFixed(3)}%`;
   };
   //Calculate the contribution percentage
   const data = ranks.map((item: RawRank, index: number) => {

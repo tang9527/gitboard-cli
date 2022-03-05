@@ -1,6 +1,6 @@
 {
   "name": "gitboard-cli",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "View contributions of developers in the git repository",
   "main": "index.ts",
   "keywords": [
