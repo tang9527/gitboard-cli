@@ -48,7 +48,7 @@ gb status --after=2022-1-1 --before=2022-2-1
 
 ## Interface
 
-```sh
+```
 λ gb --help
 
   Usage: gb [options] [command]
