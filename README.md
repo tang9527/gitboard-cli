@@ -22,7 +22,7 @@ npm install --global gitboard-cli
 
 ## Usage
 
-> In the directory where the Git repository is located, execute the following commands👇
+> In the directory where the Git repository is located, execute the following commands
 
 ```sh
 gb rank

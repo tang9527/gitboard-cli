@@ -16,12 +16,6 @@ const env = process.env;
 global.gLang = env.LC_ALL || env.LC_MESSAGES || env.LANG || env.LANGUAGE;
 
 initialize().then(async (info) => {
-  if (!info) {
-    console.log(
-      color.yellow(getText('WARNING')) + getText('INVALID_REPOSITORY')
-    );
-    return;
-  }
   global.gBranchInfo = info;
   program
     .name('gb')
@@ -35,7 +29,15 @@ initialize().then(async (info) => {
       command.option(option[0], option[1]());
     });
     command.description(description());
-    command.action(action);
+    command.action((cmd: string, options: { [key: string]: any }) => {
+      if (!info && (name === 'rank' || name === 'status')) {
+        console.log(
+          color.yellow(getText('WARNING')) + getText('INVALID_REPOSITORY')
+        );
+        return;
+      }
+      action(cmd, options);
+    });
   });
   program.parse();
 });

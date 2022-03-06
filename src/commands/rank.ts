@@ -20,7 +20,7 @@ async function handler(_: string, cmd: { [key: string]: any }) {
 
   const contrib = require('gitboard-cli-blessed-contrib');
   const blessed = require('gitboard-cli-blessed');
-  const s = blessed.screen({});
+  const s = blessed.screen({ fullUnicode: true });
   const grid = new contrib.grid({
     rows: 12,
     cols: 12,
@@ -29,12 +29,12 @@ async function handler(_: string, cmd: { [key: string]: any }) {
   const table = grid.set(0, 0, 8, 12, contrib.table, {
     keys: true,
     fg: 'green',
-    label: `Top ${top}`,
+    label: getText('TITLE', { top }),
     columnSpacing: 2,
     columnWidth: [10, 30, 15, 20, 15, 20, 15, 20],
   });
   const calculatePercent = (current: number, total: number): string => {
-    return `${((current * 100) / total).toFixed(3)}%`;
+    return `${((current * 100) / total).toFixed(2)}%`;
   };
   //Calculate the contribution percentage
   const data = ranks.map((item: RawRank, index: number) => {
@@ -51,14 +51,14 @@ async function handler(_: string, cmd: { [key: string]: any }) {
   });
   table.setData({
     headers: [
-      'Top',
-      'Name',
-      'Commits',
-      'Commits percent',
-      'Additions',
-      'Additions percent',
-      'Deletions',
-      'Deletions percent',
+      getText('TOP'),
+      getText('NAME'),
+      getText('COMMITS'),
+      getText('COMMITS_PERCENT'),
+      getText('ADDITIONS'),
+      getText('ADDITIONS_PERCENT'),
+      getText('DELETIONS'),
+      getText('DELETIONS_PERCENT'),
     ],
     data: data.slice(0, top),
   });

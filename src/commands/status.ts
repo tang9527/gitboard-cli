@@ -13,7 +13,7 @@ async function handler(_: string, cmd: { [key: string]: any }) {
   const status = await getRepositoryStatus(reduceCommits);
   const contrib = require('gitboard-cli-blessed-contrib');
   const blessed = require('gitboard-cli-blessed');
-  const s = blessed.screen({});
+  const s = blessed.screen({ fullUnicode: true });
   const grid = new contrib.grid({
     rows: 12,
     cols: 12,
@@ -37,19 +37,19 @@ async function handler(_: string, cmd: { [key: string]: any }) {
     deletions,
   } = status;
   const data = [
-    ['Remote url', remoteUrl],
-    ['Remote branch', remoteBranch],
-    ['Branch', branch],
-    ['Last commit', dayjs(lastCommittedAt).format()],
-    ['First commit', dayjs(firstCommittedAt).format()],
-    ['Lines', formatNumber(lines)],
-    ['Contributors', formatNumber(contributors)],
-    ['Commits', formatNumber(reduceCommits.length)],
-    ['Additions', formatNumber(additions)],
-    ['Deletions', formatNumber(deletions)],
+    [getText('REMOTE_URL'), remoteUrl],
+    [getText('REMOTE_BRANCH'), remoteBranch],
+    [getText('BEANCH'), branch],
+    [getText('LAST_COMMIT'), dayjs(lastCommittedAt).format()],
+    [getText('FIRST_COMMIT'), dayjs(firstCommittedAt).format()],
+    [getText('LINES'), formatNumber(lines)],
+    [getText('CONTRIBUTORS'), formatNumber(contributors)],
+    [getText('STATUS_COMMITS'), formatNumber(reduceCommits.length)],
+    [getText('STATUS_ADDITIONS'), formatNumber(additions)],
+    [getText('STATUS_DELETIONS'), formatNumber(deletions)],
   ];
   table.setData({
-    headers: ['Title', 'Value'],
+    headers: [getText('STATUS_TITLE'), getText('STATUS_VALUE')],
     data,
   });
   table.focus();

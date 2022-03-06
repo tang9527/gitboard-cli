@@ -7,9 +7,20 @@ const i18N = {
 /**
  * get i18n text
  * @param {string} key
+ * @param { { [key: string]: string | number }} parameters
  * @returns {string}
  */
-export function getText(key: string): string {
+export function getText(
+  key: string,
+  parameters?: { [key: string]: string | number }
+): string {
   const lang = global.gLang === 'zh_CN.UTF-8' ? 'zh-CN' : 'en-US';
-  return i18N[lang][key] || '';
+  let value = i18N[lang][key] || '';
+  if (parameters) {
+    Object.keys(parameters).forEach((key) => {
+      const itemValue = parameters[key];
+      value = value.replaceAll('${' + key + '}', itemValue);
+    });
+  }
+  return value;
 }
